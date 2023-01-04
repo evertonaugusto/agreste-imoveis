@@ -3,6 +3,7 @@
 use App\Models\Imovel;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ImovelController;
+use App\Http\Controllers\SystemController;
 use App\Http\Controllers\ProfileController;
 
 /*
@@ -15,6 +16,8 @@ use App\Http\Controllers\ProfileController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+Route::get('/', [SystemController::class, 'index'])->name('system.index');
 
 Route::resource('imoveis', ImovelController::class);
 // Route::get('imoveis/{id}', [ImovelController::class, 'show']);
