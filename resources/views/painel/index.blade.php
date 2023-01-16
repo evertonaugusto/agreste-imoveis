@@ -17,24 +17,32 @@
                 </div>
                 <div class="mt-10 flex-1 flex flex-wrap justify-center gap-10">
                     <div>
-                        <label for="house">CASA</label>
-                        <input type="text" id="house">
+                        <select class="text-left pr-10 text-orange-600 text-xl font-bold font-mono border-2 border-orange-600 rounded-full" name="type" id="type">
+                            <option value="" disabled selected hidden>Tipo do Imóvel</option>
+                            <option value="house">Casa</option>
+                            <option value="apartment">Apartamento</option>
+                        </select>
                     </div>
                     <div>
-                        <label for="house">CASA</label>
-                        <input type="text" id="house">
+                        <select class="text-left pr-10 text-orange-600 text-xl font-bold font-mono border-2 border-orange-600 rounded-full" name="uf" id="uf">
+                            <option value="" disabled selected hidden>UF</option>
+                            <option value="rn">RN</option>
+                            <option value="pb">PB</option>
+                        </select>
                     </div>
                     <div>
-                        <label for="house">UF</label>
-                        <input type="text" id="house">
+                        <select class="text-left pr-10 text-orange-600 text-xl font-bold font-mono border-2 border-orange-600 rounded-full" name="city" id="city">
+                            <option value="" disabled selected hidden>CIDADE</option>
+                            <option value="nova_cruz">Nova Cruz</option>
+                            <option value="joao_pessoa">João Pessoa</option>
+                        </select>
                     </div>
                     <div>
-                        <label for="house">CIDADE</label>
-                        <input type="text" id="house">
-                    </div>
-                    <div>
-                        <label for="house">BAIRRO</label>
-                        <input type="text" id="house">
+                        <select class="text-left pr-10 text-orange-600 text-xl font-bold font-mono border-2 border-orange-600 rounded-full" name="bairro" id="bairro">
+                            <option value="" disabled selected hidden>BAIRRO</option>
+                            <option value="centro">Centro</option>
+                            <option value="sao_sebastiao">São Sebastião</option>
+                        </select>
                     </div>
                 </div>
                 <button class="w-full mt-10 py-3 bg-white text-orange-600 text-xl font-bold font-mono border-2 border-orange-600 rounded-full hover:border-gray-400 hover:bg-gray-50" type="submit">BUSCAR</button>
