@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Imovel;
+use App\Models\Address;
+use Illuminate\Support\Facades\Auth;
 use App\Http\Requests\StoreImovelRequest;
 use App\Http\Requests\UpdateImovelRequest;
 
@@ -37,7 +39,35 @@ class ImovelController extends Controller
      */
     public function store(StoreImovelRequest $request)
     {
-        Imovel::create($request->all());
+        $files = $request->imgs;
+
+        $address = Address::create([
+            'street' => $request->input('street'),
+            'bairro' => $request->input('bairro'),
+            'number' => $request->input('number'),
+            'cep' => $request->input('cep'),
+            'city' => $request->input('city'),
+            'uf' => $request->input('uf'),
+        ]);
+
+        if($address) {
+            $imovel = Imovel::create([
+                'tipo_imovel' => $request->input('tipo_imovel'),
+                'descricao' => $request->input('descricao'),
+                'valor' => $request->input('valor'),
+                'qt_comodos' => $request->input('qt_comodos'),
+                'nu_registro' => $request->input('nu_registro'),
+                'metros_quadrados' => $request->input('metros_quadrados'),
+                'address_id' => $address->id,
+                'user_id' => Auth::user()->id,
+            ]);
+
+            $count = 1;
+            foreach($files as $file){
+                $file->storeAs("images/imoveis/{$imovel->id}", $count);
+                $count++;
+            }
+        }
 
         return redirect()->back();
     }

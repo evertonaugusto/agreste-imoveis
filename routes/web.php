@@ -19,8 +19,18 @@ use App\Http\Controllers\ProfileController;
 
 Route::get('/', [SystemController::class, 'index'])->name('system.index');
 
-Route::resource('imoveis', ImovelController::class);
-// Route::get('imoveis/{id}', [ImovelController::class, 'show']);
+Route::get('/imoveis/create', [ImovelController::class, 'create'])
+    ->name('imoveis.create');
+
+Route::get('/imoveis', [ImovelController::class, 'index'])
+    ->name('imoveis.index');
+
+Route::get('/imoveis/{imovel}', [ImovelController::class, 'show'])
+    ->name('imoveis.show');
+
+Route::resource('imoveis', ImovelController::class)->only([
+    'store', 'update', 'destroy', 'edit'
+])->middleware('auth');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
