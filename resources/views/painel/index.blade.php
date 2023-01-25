@@ -49,26 +49,44 @@
             </div>
         </div>
     </div>
-    <div class="bg-orange-500 py-10 px-10">
-        <div class="bg-gray-800 h-20 relative">
-            <span class="absolute -top-8 text-white font-bold text-5xl">Imovéis</span>
+    <a name="quem_somos"></a>
+    <div class="bg-white max-w-7xl py-10 px-10 mx-auto flex flex-col md:flex-row gap-10">
+        <div class="bg-gray-100 md:flex-1 box-border">
+            <div class="flex-1 h-96 md:h-full" style="background-image: url('https://www.executivecentre.com/wp-content/uploads/centres/Banner-Product-PrivateOffice.jpg');
+                background-position: center;
+                background-size: cover"></div>
         </div>
-        <div class="mt-10 flex flex-row">
-            @foreach ($imoveis as $imovel)
-                <div class="p-2 w-full sm:w-1/2 lg:w-1/3">
-                    <div class="bg-white overflow-hidden shadow-lg flex flex-col w-full">
-                        <div class="w-full h-52" style="background-image: url('https://fotos.vivadecora.com.br/piscina-casa-cristal-design-de-interiores-iara-kilaris-iarakilaris-290706-square_cover_xsmall.jpg')"></div>
-                        <div class="p-4 relative">
-                            <div class="bg-gray-700 rounded-sm font-mono font-bold text-lg text-white absolute right-5 -mt-8 px-2 py-0.5 -rotate-3">aluga-se</div>
-                            <span class="bg-orange-700 px-3 text-white text-sm rounded-full">{{ $imovel->tipo_imovel }}</span>
-                            <p class="mt-2">{{ $imovel->descricao }}</p>
-                            <p class="bg-gray-200 px-2 py-1 mt-2 font-bold text-xl text-center rounded-md">R$ {{ $imovel->valor }} / mês</p>
-                            <p class="mt-2"><span class="font-bold">Extensão:</span> {{ $imovel->metros_quadrados }} m²</p>
-                            <a href="{{ route('imoveis.show', [$imovel->id]) }}"><p class="bg-green-700 w-28 float-right py-1 mt-8 font-bold text-center text-white text-base rounded-full">VER MAIS</p></a>
+        <div class="md:flex-1">
+            <div class="bg-gray-800 h-20 relative">
+                <span class="absolute -top-8 text-orange-500 font-bold text-5xl">Quem Somos?</span>
+            </div>
+            <p class="mt-5 text-orange-500 text-lg">Lorem ipsum dolor sit amet. Vel deleniti ipsam quo culpa similique vel repellendus deleniti. In commodi minus eum dolor consequatur At repellat error a ipsam reiciendis!.</p>
+            <p class="mt-5 mb-5 text-orange-500 text-lg">Nam galisum odit et illo omnis eos iure adipisci. Est quas autem et rerum autem sit quasi similique. Ex perspiciatis odio et illum illo vel quia dignissimos ab possimus debitis.</p>
+            <a href="#" class="text-orange-500 font-bold text-4xl">ler mais</a>
+        </div>
+    </div>
+    <div class="bg-orange-500 py-10 px-10">
+        <div class="max-w-7xl mx-auto">
+            <div class="bg-gray-800 h-20 relative">
+                <span class="absolute -top-8 text-white font-bold text-5xl">Imovéis</span>
+            </div>
+            <div class="mt-10 flex flex-col flex-wrap md:flex-row justify-center">
+                @foreach ($imoveis as $imovel)
+                    <div class="p-2 w-full md:w-80">
+                        <div class="bg-white overflow-hidden shadow-lg flex flex-col w-full">
+                            <div class="w-full h-52" style="background-image: url('https://fotos.vivadecora.com.br/piscina-casa-cristal-design-de-interiores-iara-kilaris-iarakilaris-290706-square_cover_xsmall.jpg'); background-position: center; background-size: cover; background-repeat: no-repeat"></div>
+                            <div class="p-4 relative">
+                                <div class="bg-gray-700 rounded-sm font-mono font-bold text-lg text-white absolute right-5 -mt-8 px-2 py-0.5 -rotate-3">aluga-se</div>
+                                <span class="bg-orange-700 px-3 text-white text-sm rounded-full">{{ $imovel->tipo_imovel }}</span>
+                                <p class="mt-2">{{ $imovel->descricao }}</p>
+                                <p class="bg-gray-200 px-2 py-1 mt-2 font-bold text-xl text-center rounded-md">R$ {{ $imovel->valor }} / mês</p>
+                                <p class="mt-2"><span class="font-bold">Extensão:</span> {{ $imovel->metros_quadrados }} m²</p>
+                                <a href="{{ route('imoveis.show', [$imovel->id]) }}"><p class="bg-green-700 w-28 float-right py-1 mt-8 font-bold text-center text-white text-base rounded-full">VER MAIS</p></a>
+                            </div>
                         </div>
                     </div>
-                </div>
-            @endforeach
+                @endforeach
+            </div>
         </div>
     </div>
 @endsection

@@ -10,6 +10,6 @@ class SystemController extends Controller
     public function index()
     {
         return view('painel.index')
-            ->with('imoveis', Imovel::all());
+            ->with('imoveis', Imovel::limit(4)->get());
     }
 }
