@@ -49,6 +49,7 @@
             </div>
         </div>
     </div>
+    <a name="quem_somos"></a>
     <div class="bg-white max-w-7xl py-10 px-10 mx-auto flex flex-col md:flex-row gap-10">
         <div class="bg-gray-100 md:flex-1 box-border">
             <div class="flex-1 h-96 md:h-full" style="background-image: url('https://www.executivecentre.com/wp-content/uploads/centres/Banner-Product-PrivateOffice.jpg');
